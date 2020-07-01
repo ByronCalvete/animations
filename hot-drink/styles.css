@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #fde2e2;
+  display: flex;
+}
+
+.container
+{
+  width: 750px;
+  height: 360px;
+  margin: auto;
+  display: flex;
+  flex-direction: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container-int1, .container-int2 {
+  margin: auto;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.title
+{
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #000839;
+}
+
+.baseCup {
+  width: 80%;
+  height: 6%;
+  background-color: #03395A;
+  border-radius: 10px;
+  position: relative;
+}
+
+.baseCup::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  background-color: #000839;
+  position: absolute;
+  right: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.halfCup {
+  height: 30%;
+  width: 30%;
+  background-color: white;
+  position: absolute;
+  bottom: 18px;
+  left: 50px;
+  border-radius: 15px 0 0 0;
+}
+
+.halfCup::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #fde2e2;
+  border-right: 20px solid transparent;
+}
+
+.cup {
+  width: 60%;
+  height: 30%;
+  background-color: #f9f9f9;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  
+}
+
+.cup::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid #fde2e2;
+  border-left: 20px solid transparent;
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+}
+
+.handle {
+  height: 60px;
+  width: 40px;
+  border-radius: 0 50% 50% 0;
+  background-color: #fde2e2;
+  border: 10px solid #f9f9f9;
+  position: absolute;
+  right: 26px;
+  bottom: 40px;
+  transform: rotate(10deg);
+}
+
+.steam {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.steam1, .steam2-int, .steam3-int, .steam4, .steam5-int {
+  width: 20%;
+  height: 5%;
+  background-color: #9c5518;
+  border-radius: 10px;
+  animation: steamFloating 1.5s infinite linear;
+}
+
+.steam1 {
+  align-self: center;
+  animation-delay: 1.3s;
+}
+
+.steam2-int {
+  width: 30%;
+  height: 100%;
+  animation-delay: 1s;
+  position: relative;
+  right: 50px;
+}
+
+.steam3-int {
+  width: 50%;
+  height: 100%;
+  animation-delay: 0.8s;
+  position: relative;
+  left: 40px;
+}
+
+.steam4 {
+  width: 70%;
+  align-self: center;
+  animation-delay: 0.5s;
+}
+
+.steam5-int {
+  width: 35%;
+  height: 100%;
+  animation-delay: 0.2s;
+  position: relative;
+  right: 20px;
+}
+
+.steam2, .steam3, .steam5 {
+  width: 200px;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.bubble2, .bubble3, .bubble5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #5a3f11;
+  animation: bubbleFloating 1.5s infinite ease-in;
+  position: relative;
+}
+
+.bubble3 {
+  top: 15px;
+  right: 130px;
+  animation-delay: 0.7s;
+}
+
+.bubble5 {
+  top: 5px;
+  animation-delay: 0.4s;
+}
+
+@keyframes steamFloating {
+  0% {
+      transform: scaleX(1);
+  }
+  50% {
+      transform: scaleX(0.8);
+  }
+  100% {
+      transform: scaleX(1);
+  }
+}
+
+@keyframes bubbleFloating {
+  0% {
+      transform: scale(1)
+  }
+  50% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
