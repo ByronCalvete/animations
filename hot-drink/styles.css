@@ -120,7 +120,7 @@ body {
   height: 5%;
   background-color: #9c5518;
   border-radius: 10px;
-  animation: steamFloating 1.5s infinite linear;
+  animation: steamFloat 1.5s infinite linear;
 }
 
 .steam1 {
@@ -170,7 +170,7 @@ body {
   height: 10px;
   border-radius: 50%;
   background-color: #5a3f11;
-  animation: bubbleFloating 1.5s infinite ease-in;
+  animation: bubbleFloat 1.5s infinite ease-in;
   position: relative;
 }
 
@@ -185,7 +185,7 @@ body {
   animation-delay: 0.4s;
 }
 
-@keyframes steamFloating {
+@keyframes steamFloat {
   0% {
       transform: scaleX(1);
   }
@@ -197,7 +197,7 @@ body {
   }
 }
 
-@keyframes bubbleFloating {
+@keyframes bubbleFloat {
   0% {
       transform: scale(1)
   }
