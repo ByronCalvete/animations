@@ -1,2 +1,5 @@
-# animations
-Banco de animaciones para ser usadas en proyectos
+# Animations 🎬
+
+Simple animations for projects and fast prototypes.
+
+
