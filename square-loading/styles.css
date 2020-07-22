@@ -1,0 +1,59 @@
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  background-color: #0779e4;
+}
+
+.container
+{
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.square
+{
+  width: 100px;
+  height: 100px;
+  border: 5px solid white;
+  animation: rotate 4s infinite;
+  background: linear-gradient(to right, white 50%, #0779e4 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transform: rotate(-90deg);
+}
+
+@keyframes rotate {
+  0%
+  {
+    background-position: right bottom;
+  }
+  30%
+  {
+    background-position: left bottom;
+    transform: rotate(-90deg);
+  }
+  50%
+  {
+    background-position: left bottom;
+    transform: rotate(90deg);
+  }
+  80%
+  {
+    background-position: right bottom;
+    transform: rotate(90deg);
+  }
+  100%
+  {
+    background-position: right bottom;
+    transform: rotate(270deg);
+  }
+}
