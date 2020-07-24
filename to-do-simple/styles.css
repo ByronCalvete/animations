@@ -1,0 +1,145 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  background-color: #423144;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container
+{
+  width: 350px;
+  height: 560px;
+  background-color: #ffdbc5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 5px 15px rgba(255,255,255,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  cursor: default;
+}
+
+.title
+{
+  width: 100%;
+  height: 25%;
+  background-image: url(./background-image.jpg);
+  background-size: cover;
+  color: white;
+  font-size: 2rem;
+  font-family: 'Dancing Script', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addSection
+{
+  width: 95%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #947894;
+}
+
+.addInput
+{
+  margin: 10px 0 10px 10px;
+  padding: 10px;
+  width: 180px;
+  height: 40px;
+  border-radius: 15px 0 0 15px;
+  border: 1px solid #423144;
+  border-right: none;
+}
+
+.addInput::placeholder
+{
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: #947894;
+}
+
+.add
+{
+  width: 60px;
+  height: 40px;
+  margin: 10px 10px 10px 0;
+  background-color: #a00e0e;
+  color: white;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.add:hover
+{
+  background-color: #880f0f;
+}
+
+.things
+{
+  width: 90%;
+  height: 60%;
+  padding: 0 10px 10px 10px;
+  overflow: auto;
+}
+
+/* DOM */
+
+.taskContainer
+{
+  border-bottom: 1px solid #947894;
+  padding: 15px 0;
+  display: flex;
+  font-size: 1.2rem;
+  color: #423144;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task
+{
+  width: 80%;
+}
+
+i.fas.fa-check, i.fas.fa-trash-alt
+{
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.2 ease-in-out;
+}
+
+i.fas.fa-check:hover
+{
+  color: #0c9463;
+}
+i.fas.fa-trash-alt:hover
+{
+  color: #ff0000;
+}
+
+i.fas.fa-check:active, i.fas.fa-trash-alt:active
+{
+  transform: translateY(3px);
+}
+
+.taskContainer:hover i.fas.fa-check, .taskContainer:hover i.fas.fa-trash-alt
+{
+  opacity: 1;
+}
