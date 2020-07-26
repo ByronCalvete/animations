@@ -1,0 +1,141 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  height: 100vh;
+  font-family: 'Dancing Script', cursive;
+  background: #0779e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container
+{
+  display: flex;
+}
+
+.center
+{
+  margin: 50px;
+  height: 400px;
+  width: 290px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.front-face, .back-face
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background:  linear-gradient(rgba(0,0,0, 0.1), rgba(0,0,0, 0.1)), url(background.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.contents
+{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  perspective: 100px;
+  transform: translateY(-50%) translateZ(60px) scale(0.94);
+}
+
+.front p
+{
+  color: black;
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.back h2 {
+  font-weight: lighter;
+  font-size: 35px;
+  padding-bottom: 5px;
+}
+
+.back span
+{
+  font-size: 25px;
+}
+
+.icons
+{
+  margin: 10px 0;
+}
+
+.icons img
+{
+  color: #042f4b;
+  background: white;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.center:hover > .back-face
+{
+  transform: rotateY(0deg);
+}
+
+.center:hover > .front-face
+{
+  transform: rotateY(-180deg);
+}
+
+.front p::after
+{
+  content: "";
+  display: block;
+  left: 0;
+  right: 0;
+  height: 2px;
+  width: 100px;
+  background: purple;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.front span
+{
+  color: black;
+  font-size: 25px;
+}
+
+.back-face
+{
+  transform: rotateY(180deg);
+  background: linear-gradient(45deg, #043348 0%, #032535 100%);
+}
+
+.back
+{
+  color: white;
+  margin-top: 60px;
+}
+
+.image-back
+{
+  height: 40%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
