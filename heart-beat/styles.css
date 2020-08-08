@@ -15,6 +15,7 @@ body {
 .heart {
     width: 100px;
     height: 100px;
+    margin: 0 50px;
     background-color: #dd2c00;
     transform: rotate(-45deg);
     animation-name: beat;
@@ -42,8 +43,8 @@ body {
 
 @keyframes beat {
     0% {
-        width: 50px;
-        height: 50px;
+        width: 500px;
+        height: 500px;
     }
     40% {
         width: 50px;
