@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin text {
+    @for $i from 1 through 13 {
+        &:nth-child(#{$i}) {
+            animation: hover 1.75s cubic-bezier(0.57, 0.07, 0.56, 0.89) infinite #{$i * 0.125}s;
+        }
+    }
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(dimgray, black);
+    display: grid;
+    place-items: center;
+}
+
+.grid {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(green, black 85%);
+    border: 7px groove lime;
+    outline: 5px groove black;
+    box-shadow: inset 0 0 40px 0 lawngreen;
+    display: grid;
+    place-items: center;
+}
+
+.top, 
+.bottom,
+.left,
+.right {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        lime 2px,
+            transparent 3px,
+            transparent 40px
+        ),
+        repeating-linear-gradient(
+        90deg,
+            lime 2px,
+            transparent 3px,
+            transparent 40px) transparent;    
+    border: 2px solid lawngreen;
+    background-size: 40px 40px, 40px 40px;
+    filter: drop-shadow(0 0 1px lawngreen)
+            drop-shadow(0 0 2px lawngreen)
+            drop-shadow(0 0 5px lawngreen);
+}
+
+.top {
+    transform-origin: top;
+    transform: perspective(250px)rotateX(-45deg);
+    animation: bg-shift 1s linear infinite; 
+}
+
+.top {
+    transform-origin: bottom;
+    transform: perspective(250px)rotateX(45deg);
+    animation: bg-shift-2 1s linear infinite;  
+}
+
+.top {
+    transform-origin: left;
+    transform: perspective(250px)rotateX(45deg); 
+    animation: bg-shift-3 1s linear infinite; 
+}
+
+.top {
+    transform-origin: right;
+    transform: perspective(250px)rotateX(-45deg);
+    animation: bg-shift-4 1s linear infinite;  
+}
+
+.center {
+    z-index: 5;
+    width: 40%;
+    height: 40%;
+    background: repeating-linear-gradient(
+        lime 2px,
+            transparent 3px,
+            transparent 40px
+        ),
+        repeating-linear-gradient(
+        90deg,
+            lime 2px,
+            transparent 3px,
+            transparent 40px) transparent;
+    background-size: 15px 15px, 15px 15px;
+    filter: drop-shadow(0 0 1px lawngreen)
+            drop-shadow(0 0 2px lawngreen)
+            drop-shadow(0 0 5px lawngreen);
+    animation: bg-shift-5 1s linear infinite alternate;
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+p {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    -webkit-text-stroke: 2px silver;
+    background: linear-gradient(green 30%, white, green 70%);
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 1px black)
+            drop-shadow(0 0 1px black)
+            drop-shadow(0 0 1px black)
+            drop-shadow(0 0 1px black);
+    @include text;
+}
+
+@keyframes bg-shift {
+    to {
+        background-position: 0 200px;
+    }
+}
+
+@keyframes bg-shift-2 {
+    to {
+        background-position: 0 -200px;
+    }
+}
+
+@keyframes bg-shift-3 {
+    to {
+        background-position: 200px 0;
+    }
+}
+
+@keyframes bg-shift-4 {
+    to {
+        background-position: -200px 0;
+    }
+}
+
+@keyframes bg-shift-5 {
+    0% {
+        background-position: -200px 0;
+    }
+    50% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -200px;
+    }
+}
+
+@keyframes hover {
+    0% {
+        transform: perspective(300px)translatez(-250px);
+    }
+    50% {
+        transform: perspective(300px)translatez(15px);
+    }
+    100% {
+        transform: perspective(300px)translatez(-250px);
+    }
+}
