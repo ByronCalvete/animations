@@ -21,6 +21,15 @@
     align-items: center;
     position: relative;
   }
+
+  .title {
+      font-size: 70px;
+      font-weight: 700;
+      font-family: 'Tangarine', cursive;
+      color: #515070;
+      margin-bottom: 50px;
+      letter-spacing: 0.3rem;
+  }
   
   .timer {
     font-size: 76px;
